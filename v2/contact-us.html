@@ -15,7 +15,7 @@
 <button class="burger" aria-label="Menu" aria-controls="nav" aria-expanded="false">&#9776;</button></div></div></header>
 <main><section class="pagehead"><div class="wrap"><div class="ph-box"><p class="crumb mono"><a href="index.html">Home</a> / Contact us</p><h1>Contact us</h1></div></div></section>
 <div class="content"><div class="container"><div class="contact-grid"><div><h2>Contact details</h2><dl class="dl"><div><dt>Address</dt><dd>P.O. Box 105613, Abu Dhabi, UAE</dd></div><div><dt>Telephone</dt><dd class="mono">+971 2 650 4049</dd></div><div><dt>Fax</dt><dd class="mono">+971 2 650 4081</dd></div><div><dt>Email</dt><dd><a href="mailto:info@greenvision.ae">info@greenvision.ae</a></dd></div></dl></div>
-<div><h2>Send us a message</h2><form class="cform" onsubmit="event.preventDefault();var f=this;location.href='mailto:info@greenvision.ae?subject='+encodeURIComponent('Website enquiry from '+f.name.value)+'&body='+encodeURIComponent(f.message.value+'\n\n'+f.name.value+' / '+f.email.value)">
+<div><h2>Send us a message</h2><form class="cform">
 <input name="name" placeholder="Name" aria-label="Name" required><input name="email" type="email" placeholder="Email" aria-label="Email" required><textarea name="message" rows="6" placeholder="Message" aria-label="Message" required></textarea><button class="btn btn-solid" type="submit">Send message <i>↗</i></button></form></div></div></div></div>
 </main>
 <footer class="site"><div class="wrap"><div class="fgrid">
@@ -30,4 +30,4 @@ var b=document.querySelector('.burger'),n=document.getElementById('nav');
 b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o)});
 var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12});
 document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
-</script></body></html>
+</script><script src="../shared/form.js" defer></script></body></html>
