@@ -85,3 +85,8 @@ footer h3{color:#fff;margin-bottom:14px}
 .cform{display:grid;gap:14px}.cform input,.cform textarea{padding:12px;border:1px solid #ccc;font:inherit}.cform .btn{background:none;cursor:pointer;justify-self:start;font-size:14px}.cform .btn:hover{background:var(--green)}
 @media(max-width:900px){.projects.grid3{grid-template-columns:1fr 1fr}.detail,.svc,.contact-grid{grid-template-columns:1fr}.banner h1{font-size:24px}}
 @media(max-width:560px){.projects.grid3{grid-template-columns:1fr}}
+/* version switcher */
+.vbar{background:#111;padding:6px 0}
+.vswitch{display:flex;justify-content:flex-end;gap:8px}
+.vswitch a{color:#fff;border:1px solid #555;padding:3px 14px;border-radius:3px;font-size:12px;font-weight:600}
+.vswitch a:hover{background:#fff;color:#111}
