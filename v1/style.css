@@ -146,3 +146,51 @@ footer.site .copy{border-top:1px solid rgba(238,240,245,.08);padding:20px 0;font
  .sh{flex-direction:column;align-items:start}
 }
 @media(max-width:560px){.grid4,.projects,.projects.grid3{grid-template-columns:1fr}.pagehead h1{font-size:28px}.stats{gap:32px}}
+/* ---- gestures and motion: press, hover, reveal, viewer ---- */
+header.site{transition:box-shadow .2s var(--ease)}header.site.scrolled{box-shadow:0 1px 0 var(--line),0 8px 24px rgba(0,0,0,.05)}
+.btn,.svc-card,.sheet-row,.side a,.proj,.vswitch a,nav.main a,.sectors figure{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+/* press: everything tappable squeezes in */
+.btn:active,.vswitch a:active,nav.main a:active,.side a:active{transform:scale(.96)}
+.svc-card:active,.proj:active,.sheet-row:active{transform:scale(.98)}
+.svc-card,.proj,.sheet-row,.vswitch a,nav.main a,.side a{transition:transform .18s var(--ease),background-color .15s var(--ease),color .15s var(--ease),opacity .15s var(--ease),box-shadow .2s var(--ease)}
+/* hover (mouse only): lift cards, zoom photos inside their frames */
+@media(hover:hover){
+ .svc-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,.06)}
+ .btn:hover{transform:translateY(-1px)}
+ .sheet-row:hover{background:var(--raised)}
+ .sheet-row:hover .fig{color:var(--accent)}
+}
+.proj .ph,.sectors .ph,.about>.ph{overflow:hidden;border-radius:12px}
+.proj img,.sectors img,.about>img,.pimg,.about-page img{transition:transform .6s var(--ease),opacity .15s var(--ease)}
+@media(hover:hover){.proj:hover img,.sectors figure:hover img{transform:scale(1.04)}}
+.proj:active img{transform:scale(1.02)}
+.proj{overflow:hidden;border-radius:12px}.proj h3{padding-bottom:2px}
+.sectors figure{overflow:hidden;border-radius:12px}.sectors figcaption{padding:12px 0 0}
+img.zoom{cursor:zoom-in}
+.sectors img.zoom:active,.pimg.zoom:active{transform:scale(1.03)}
+.link{display:inline-block;transition:transform .18s var(--ease),color .15s var(--ease)}
+@media(hover:hover){.link:hover{transform:translateX(3px)}}
+/* scroll reveal */
+.rv{opacity:0;transform:translateY(12px);transition:opacity .5s var(--ease) var(--d,0ms),transform .5s var(--ease) var(--d,0ms)}
+.rv.in{opacity:1;transform:none}
+.svc-card.rv.in,.proj.rv.in{transition:opacity .5s var(--ease) var(--d,0ms),transform .18s var(--ease),background-color .15s var(--ease),box-shadow .2s var(--ease)}
+/* mobile menu eases open */
+@media(max-width:960px){nav.main.open{animation:menu .2s var(--ease)}}
+@keyframes menu{from{opacity:0;transform:translateY(-6px)}}
+/* photo viewer */
+body.lb-open{overflow:hidden}
+.lb{position:fixed;inset:0;z-index:100;background:rgba(11,13,20,.9);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .25s var(--ease)}
+.lb.on{opacity:1;pointer-events:auto}
+.lb figure{margin:0;text-align:center;max-width:min(92vw,1100px)}
+.lb img{max-width:100%;max-height:78vh;border-radius:12px;transform:scale(.92);transition:transform .4s var(--ease);margin:0 auto}
+.lb.on img{transform:scale(1)}
+.lb img.slide-l{animation:sl .35s var(--ease)}.lb img.slide-r{animation:sr .35s var(--ease)}
+@keyframes sl{from{opacity:0;transform:translateX(32px)}}@keyframes sr{from{opacity:0;transform:translateX(-32px)}}
+.lb figcaption{margin-top:16px;color:#a3a9b8;font-size:14px;min-height:20px}
+.lb button{position:absolute;width:44px;height:44px;border-radius:50%;border:1px solid rgba(238,240,245,.22);background:rgba(238,240,245,.08);color:#eef0f5;font-size:26px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background-color .15s var(--ease),transform .18s var(--ease)}
+.lb button:hover{background:rgba(238,240,245,.18)}.lb button:active{transform:scale(.94)}
+.lb-x{top:16px;right:16px}.lb-p{left:16px;top:50%;margin-top:-22px}.lb-n{right:16px;top:50%;margin-top:-22px}
+.lb.single .lb-p,.lb.single .lb-n{display:none}
+@media(max-width:560px){.lb-p,.lb-n{display:none}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition-duration:.01ms!important}.rv{opacity:1;transform:none}}
+@media(hover:hover){.svc-card:hover:active{transform:scale(.98)}.btn:hover:active{transform:scale(.96)}}
