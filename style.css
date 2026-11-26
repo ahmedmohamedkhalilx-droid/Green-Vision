@@ -68,3 +68,20 @@ footer h3{color:#fff;margin-bottom:14px}
  .projects{grid-template-columns:1fr 1fr}
 }
 @media(max-width:560px){.projects{grid-template-columns:1fr}}
+/* inner pages */
+.banner{background:#222 linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6));color:#fff;padding:48px 0;border-bottom:4px solid var(--green)}
+.banner h1{font-size:32px}.banner p{opacity:.85}.banner a:hover{color:var(--green)}
+.projects.grid3{grid-template-columns:repeat(3,1fr);gap:20px}
+.pnav{display:flex;justify-content:space-between;margin-bottom:24px;font-weight:700}.pnav a{color:var(--green)}
+.detail{display:grid;grid-template-columns:5fr 7fr;gap:40px}
+.hero{width:100%;object-fit:cover}.clogo{max-height:90px;width:auto;margin-top:16px}
+.kv{width:100%;border-collapse:collapse}.kv th,.kv td{text-align:left;padding:9px 12px;border-bottom:1px solid #e5e5e5;vertical-align:top}.kv th{width:36%;color:var(--green)}
+.tablewrap{overflow-x:auto}.list{width:100%;border-collapse:collapse;font-size:13px}
+.list th{background:var(--green);color:#fff;text-align:left;padding:10px;text-transform:uppercase}.list td{padding:10px;border-bottom:1px solid #e5e5e5;vertical-align:top}.list tbody tr:nth-child(even){background:#f7f7f7}
+.svc{display:grid;grid-template-columns:3fr 9fr;gap:40px}
+.side{list-style:none}.side a{display:block;padding:12px 16px;border:1px solid #e5e5e5;margin-bottom:-1px;font-weight:600}.side .cur a,.side a:hover{background:var(--green);color:#fff}
+.svc h5{color:var(--green);margin:18px 0 4px}.svc p{margin-bottom:10px}.mep{display:grid;gap:6px}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px}
+.cform{display:grid;gap:14px}.cform input,.cform textarea{padding:12px;border:1px solid #ccc;font:inherit}.cform .btn{background:none;cursor:pointer;justify-self:start;font-size:14px}.cform .btn:hover{background:var(--green)}
+@media(max-width:900px){.projects.grid3{grid-template-columns:1fr 1fr}.detail,.svc,.contact-grid{grid-template-columns:1fr}.banner h1{font-size:24px}}
+@media(max-width:560px){.projects.grid3{grid-template-columns:1fr}}
