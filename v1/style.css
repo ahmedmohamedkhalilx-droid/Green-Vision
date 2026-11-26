@@ -189,3 +189,8 @@ nav.main li.cta a[aria-current]{color:#fff;background:var(--ink);box-shadow:none
 @media(max-width:960px){.svc{grid-template-columns:1fr}}
 
 @media(max-width:560px){.logo{width:130px}.logo img{height:80px}}
+/* side menu: one line per item, aligned label and arrow */
+.side a{justify-content:space-between;gap:12px;white-space:nowrap}
+.side a::after{content:"\2192";color:var(--accent);opacity:0;transform:translateX(-4px);transition:opacity .15s var(--ease),transform .2s var(--ease)}
+.side a:hover::after,.side a[aria-current]::after{opacity:1;transform:none}
+@media(max-width:960px){.side a{white-space:normal}}
