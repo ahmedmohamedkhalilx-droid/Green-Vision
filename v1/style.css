@@ -15,9 +15,9 @@ h1,h2,h3,h4,h5{font-weight:500;letter-spacing:0}
 .vswitch a:hover{color:#eef0f5;background:rgba(238,240,245,.08)}
 .vswitch a[aria-current]{background:#eef0f5;color:var(--deep);border-color:#eef0f5}
 /* header */
-header.site{background:var(--bg);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:40}
+header.site{background:#fff;box-shadow:0 1px 0 var(--line),0 4px 14px rgba(0,0,0,.06);position:sticky;top:0;z-index:40}
 header.site .container{display:flex;align-items:center;justify-content:space-between;height:72px}
-.logo img{height:52px;width:auto}
+.logo{position:relative;display:block;width:170px;height:72px}.logo img{position:absolute;left:0;top:-2px;height:88px;width:auto;max-width:none}
 nav.main ul{list-style:none;display:flex;align-items:center;gap:4px}
 nav.main li{position:relative}
 nav.main a{display:flex;align-items:center;height:36px;padding:0 12px;border-radius:8px;font-size:14px;font-weight:500;color:var(--ink2);transition:color .15s var(--ease),background-color .15s var(--ease)}
@@ -187,3 +187,5 @@ header.site{transition:box-shadow .2s var(--ease)}header.site.scrolled{box-shado
 nav.main a[aria-current]{color:var(--accent);background:var(--card);box-shadow:0 0 0 1px var(--line)}
 nav.main li.cta a[aria-current]{color:#fff;background:var(--ink);box-shadow:none}
 @media(max-width:960px){.svc{grid-template-columns:1fr}}
+
+@media(max-width:560px){.logo{width:130px}.logo img{height:80px}}

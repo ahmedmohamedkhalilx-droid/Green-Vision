@@ -272,3 +272,8 @@ footer.site{margin-top:112px;padding:64px 0 32px;border-top:1px solid var(--line
 @media(max-width:640px){.projects.grid3{grid-template-columns:1fr}}
 .about-page>img{aspect-ratio:4/5;object-fit:cover;object-position:top}
 [data-theme="dark"] .ph-box{background:linear-gradient(135deg,#17431d,#0b1a0d 70%);border:1px solid var(--line)}
+
+/* logo curve hangs below the floating header */
+.pill .logo{position:relative;width:150px;height:54px;background:none;border-radius:0;padding:0}
+.pill .logo img{position:absolute;left:0;top:-6px;height:80px;margin:0;max-width:none}
+@media(max-width:640px){.pill .logo{width:120px}.pill .logo img{height:70px}}
